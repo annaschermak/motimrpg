@@ -22,5 +22,5 @@
   "secondaryTokenAttribute": null,
   "url": "https://github.com/annaschermak/motimrpg",
   "manifest": "https://raw.githubusercontent.com/annaschermak/motimrpg/refs/heads/main/system.json",
-  "download": ""
+  "download": "https://github.com/annaschermak/motimrpg/releases/download/v1.0.0/motim.zip"
 }
