@@ -20,8 +20,7 @@
   "gridUnits": "u",
   "primaryTokenAttribute": null,
   "secondaryTokenAttribute": null,
-  "background": "",
-  "url": "https://seculargames.com.br",
-  "manifest": "",
+  "url": "https://github.com/annaschermak/motimrpg",
+  "manifest": "https://raw.githubusercontent.com/annaschermak/motimrpg/refs/heads/main/system.json",
   "download": ""
 }
