@@ -1,0 +1,85 @@
+<div class="motim-desafio-app">
+
+  <!-- CARTA SORTEADA -->
+  <div class="carta-sorteada naipe-bg-{{naipeInfo.key}}">
+    <div class="cs-card">
+      <span class="cs-simbolo">{{naipeInfo.simbolo}}</span>
+      <span class="cs-valor">{{carta}}</span>
+    </div>
+    <div class="cs-meta">
+      <span class="cs-nome">{{naipeInfo.nome}}</span>
+      <span class="cs-acao">{{naipeInfo.acaoLabel}}</span>
+    </div>
+  </div>
+
+  <!-- RESULTADO -->
+  <div class="resultado-passo">
+
+    <div class="resultado-header tipo-{{desafio.tipo}}">
+      <span class="resultado-emoji">{{desafio.emoji}}</span>
+      <div class="resultado-titulo-bloco">
+        <h3 class="resultado-titulo">{{desafio.titulo}}</h3>
+        {{#if desafio.dificuldadeLabel}}
+        <span class="dif-badge dif-{{desafio.dificuldade}}">{{desafio.dificuldadeLabel}}</span>
+        {{/if}}
+        {{#if desafio.semRolagem}}
+        <span class="dif-badge dif-especial">Sem rolagem</span>
+        {{/if}}
+      </div>
+    </div>
+
+    {{#if desafio.descricao}}
+    <p class="resultado-desc">{{desafio.descricao}}</p>
+    {{/if}}
+
+    {{#if desafio.perguntas}}
+    <div class="resultado-perguntas">
+      <strong>💬 Perguntas para a tripulação:</strong>
+      <p>{{desafio.perguntas}}</p>
+    </div>
+    {{/if}}
+
+    {{#if desafio.acaoLabel}}
+    {{#unless desafio.semRolagem}}
+    <div class="resultado-acao-label">
+      <strong>Ação:</strong> {{desafio.acaoLabel}}
+    </div>
+    {{/unless}}
+    {{/if}}
+
+    {{#if desafio.outcomes}}
+    <div class="outcomes-grid">
+      <div class="outcome-cell co-vitoria">
+        <div class="outcome-head">✅ Vitória</div>
+        {{#each desafio.outcomes.vitoria}}<div class="outcome-item">{{this}}</div>{{/each}}
+      </div>
+      <div class="outcome-cell co-derrota">
+        <div class="outcome-head">❌ Derrota</div>
+        {{#each desafio.outcomes.derrota}}<div class="outcome-item">{{this}}</div>{{/each}}
+      </div>
+      <div class="outcome-cell co-cpos">
+        <div class="outcome-head">⭐ Crítico +</div>
+        {{#each desafio.outcomes.criticoPos}}<div class="outcome-item">{{this}}</div>{{/each}}
+      </div>
+      <div class="outcome-cell co-cneg">
+        <div class="outcome-head">💀 Crítico −</div>
+        {{#each desafio.outcomes.criticoNeg}}<div class="outcome-item">{{this}}</div>{{/each}}
+      </div>
+    </div>
+    {{/if}}
+
+    {{#if desafio.tesouro}}
+    <div class="tesouro-hint">💎 Tesouro em vitória: <strong>{{desafio.tesouro}}</strong></div>
+    {{/if}}
+
+    <div class="resultado-botoes">
+      {{#each desafio.efeitos}}
+      <button type="button" class="btn-aplicar" data-efeito="{{efeito}}" data-valor="{{valor}}">{{label}}</button>
+      {{/each}}
+      <button type="button" class="btn-postar-chat">📢 Postar no Chat</button>
+      <button type="button" class="btn-sortear-nova">🃏 Sortear Nova Carta</button>
+    </div>
+
+  </div>
+
+</div>
