@@ -1,522 +1,176 @@
-/* =============================================
-   MOTIM — Foundry VTT System CSS
-   Secular Games — Anna Schermak & Marina Sampaio
-   ============================================= */
-
+/* MOTIM — Foundry VTT System CSS v1.2.0 */
 :root {
-  --motim-teal:      #3BAFA8;
-  --motim-teal-dark: #2a8a84;
-  --motim-navy:      #1a2332;
-  --motim-navy-mid:  #243046;
-  --motim-sand:      #e8d5a3;
-  --motim-sand-dark: #c9b87a;
-  --motim-red:       #c0392b;
-  --motim-red-dark:  #922b21;
-  --motim-gold:      #f39c12;
-  --motim-white:     #f5f0e8;
-  --motim-text:      #1a1a1a;
-  --radius:          6px;
+  --motim-teal:#3BAFA8; --motim-teal-dark:#2a8a84;
+  --motim-navy:#1a2332; --motim-navy-mid:#243046;
+  --motim-red:#c0392b;  --motim-red-dark:#922b21;
+  --motim-gold:#f39c12; --motim-white:#f5f0e8;
+  --radius:6px;
 }
-
-/* ---- GERAL ---- */
-.motim.sheet {
-  font-family: "Palatino Linotype", Palatino, Georgia, serif;
-  color: var(--motim-text);
-  background: var(--motim-white);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-.motim.sheet .window-content {
-  background: var(--motim-white);
-  padding: 0;
-  overflow-y: auto;
-}
-
-/* ---- HEADER ---- */
-.motim-header {
-  background: linear-gradient(135deg, var(--motim-navy), var(--motim-navy-mid));
-  color: var(--motim-white);
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border-bottom: 3px solid var(--motim-teal);
-}
-
-.motim-header .actor-img {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: 2px solid var(--motim-teal);
-  object-fit: cover;
-  cursor: pointer;
-}
-
-.motim-header .header-info {
-  flex: 1;
-}
-
-.motim-header h1 input {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
-  color: var(--motim-white);
-  font-size: 1.3em;
-  font-weight: bold;
-  width: 100%;
-  padding: 2px 4px;
-}
-
-.motim-header h1 input:focus {
-  outline: none;
-  border-bottom-color: var(--motim-teal);
-}
-
-/* ---- BADGE CAPITÃ ---- */
-.badge-capita {
-  display: inline-block;
-  background: var(--motim-gold);
-  color: var(--motim-navy);
-  font-size: 0.72em;
-  font-weight: bold;
-  padding: 2px 8px;
-  border-radius: 12px;
-  margin-top: 4px;
-  letter-spacing: 0.5px;
-}
-
-.btn-toggle-capita {
-  background: var(--motim-navy-mid);
-  border: 1px solid var(--motim-teal);
-  color: var(--motim-white);
-  border-radius: 4px;
-  padding: 4px 10px;
-  font-size: 0.78em;
-  cursor: pointer;
-  transition: background 0.2s;
-  margin-top: 4px;
-}
-
-.btn-toggle-capita:hover { background: var(--motim-teal-dark); }
-.btn-toggle-capita.ativa { background: var(--motim-teal); color: var(--motim-navy); font-weight: bold; }
-
-/* ---- BODY ---- */
-.motim-body {
-  padding: 12px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-/* ---- SEÇÕES ---- */
-.secao {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-.secao-titulo {
-  background: var(--motim-navy);
-  color: var(--motim-teal);
-  font-size: 0.78em;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  padding: 5px 12px;
-  margin: 0;
-}
-
-.secao-conteudo {
-  padding: 10px 12px;
-}
-
-/* ---- FORM GROUPS ---- */
-.form-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 6px;
-}
-
-.form-group label {
-  font-size: 0.82em;
-  color: #555;
-  min-width: 90px;
-  flex-shrink: 0;
-}
-
-.form-group input[type="text"],
-.form-group input[type="number"],
-.form-group select {
-  flex: 1;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 4px 8px;
-  font-size: 0.88em;
-  background: var(--motim-white);
-  color: var(--motim-text);
-}
-
-.form-group select { cursor: pointer; }
-
-.form-group input:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: var(--motim-teal);
-}
-
-.bonus-hint {
-  font-size: 0.74em;
-  color: var(--motim-teal-dark);
-  margin-left: 4px;
-  font-style: italic;
-}
-
-/* ---- HABILIDADES ---- */
-.habilidades-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.hab-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #f9f9f9;
-  border-radius: 4px;
-  padding: 4px 8px;
-  border: 1px solid #eee;
-}
-
-.hab-emoji { font-size: 1.1em; width: 22px; text-align: center; flex-shrink: 0; }
-
-.hab-label {
-  flex: 1;
-  font-size: 0.9em;
-  font-weight: 500;
-}
-
-.hab-value-input {
-  width: 50px;
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 3px;
-  font-size: 0.95em;
-  font-weight: bold;
-  color: var(--motim-navy);
-  background: var(--motim-white);
-}
-
-.btn-rolar {
-  background: var(--motim-teal);
-  border: none;
-  color: white;
-  border-radius: 4px;
-  width: 28px;
-  height: 26px;
-  font-size: 0.85em;
-  cursor: pointer;
-  transition: background 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.btn-rolar:hover { background: var(--motim-teal-dark); }
-
-/* ---- BÔNUS DA CAPITÃ ---- */
-.bonus-capita-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 4px;
-}
-
-.bonus-capita-tag {
-  font-size: 0.8em;
-  padding: 2px 10px;
-  border-radius: 12px;
-  font-weight: bold;
-  background: #eee;
-  color: #555;
-}
-
-.bonus-capita-tag.positivo {
-  background: #d4edda;
-  color: #155724;
-}
-
-.bonus-capita-tag.negativo {
-  background: #f8d7da;
-  color: #721c24;
-}
-
-/* ---- ITEM PREFERIDO ---- */
-.item-usado-label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.82em;
-  color: #666;
-  cursor: pointer;
-  margin-top: 4px;
-}
-
-.item-usado-label input[type="checkbox"] { cursor: pointer; }
-
-.item-usado-label.usado {
-  text-decoration: line-through;
-  color: #aaa;
-}
+.motim.sheet{font-family:"Palatino Linotype",Palatino,Georgia,serif;color:#1a1a1a;background:var(--motim-white);border-radius:var(--radius);overflow:hidden;}
+.motim.sheet .window-content{background:var(--motim-white);padding:0;overflow-y:auto;}
+.motim-header{background:linear-gradient(135deg,var(--motim-navy),var(--motim-navy-mid));color:var(--motim-white);padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:3px solid var(--motim-teal);}
+.motim-header .actor-img{width:64px;height:64px;border-radius:50%;border:2px solid var(--motim-teal);object-fit:cover;cursor:pointer;}
+.motim-header .header-info{flex:1;}
+.motim-header h1 input{background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);color:var(--motim-white);font-size:1.3em;font-weight:bold;width:100%;padding:2px 4px;}
+.motim-header h1 input:focus{outline:none;border-bottom-color:var(--motim-teal);}
+.badge-capita{display:inline-block;background:var(--motim-gold);color:var(--motim-navy);font-size:0.72em;font-weight:bold;padding:2px 8px;border-radius:12px;margin-top:4px;}
+.btn-toggle-capita{background:var(--motim-navy-mid);border:1px solid var(--motim-teal);color:var(--motim-white);border-radius:4px;padding:4px 10px;font-size:0.78em;cursor:pointer;margin-top:4px;transition:background 0.2s;}
+.btn-toggle-capita:hover{background:var(--motim-teal-dark);}
+.btn-toggle-capita.ativa{background:var(--motim-teal);color:var(--motim-navy);font-weight:bold;}
+.motim-body{padding:12px 16px;display:flex;flex-direction:column;gap:12px;}
+.secao{background:#fff;border:1px solid #ddd;border-radius:var(--radius);overflow:hidden;}
+.secao-titulo{background:var(--motim-navy);color:var(--motim-teal);font-size:0.78em;font-weight:bold;text-transform:uppercase;letter-spacing:1.5px;padding:5px 12px;margin:0;}
+.secao-titulo .track-count{font-size:0.85em;color:rgba(255,255,255,0.5);font-weight:normal;text-transform:none;letter-spacing:0;}
+.secao-conteudo{padding:10px 12px;}
+.alerta-navio{background:var(--motim-red);color:white;text-align:center;font-size:0.85em;font-weight:bold;padding:6px 12px;border-radius:4px;animation:pulsar 1.5s infinite;}
+@keyframes pulsar{0%,100%{opacity:1}50%{opacity:0.7}}
+.form-group{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+.form-group label{font-size:0.82em;color:#555;min-width:90px;flex-shrink:0;}
+.form-group input,.form-group select{flex:1;border:1px solid #ccc;border-radius:4px;padding:4px 8px;font-size:0.88em;background:var(--motim-white);}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--motim-teal);}
+.habilidades-grid{display:flex;flex-direction:column;gap:6px;}
+.hab-row{display:flex;align-items:center;gap:8px;background:#f9f9f9;border-radius:4px;padding:4px 8px;border:1px solid #eee;}
+.hab-emoji{font-size:1.1em;width:22px;text-align:center;flex-shrink:0;}
+.hab-label{flex:1;font-size:0.9em;font-weight:500;}
+.hab-value-input{width:50px;text-align:center;border:1px solid #ccc;border-radius:4px;padding:3px;font-size:0.95em;font-weight:bold;background:var(--motim-white);}
+.btn-rolar{background:var(--motim-teal);border:none;color:white;border-radius:4px;width:28px;height:26px;font-size:0.85em;cursor:pointer;transition:background 0.2s;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.btn-rolar:hover{background:var(--motim-teal-dark);}
+.bonus-capita-list{display:flex;flex-wrap:wrap;gap:6px;}
+.bonus-capita-tag{font-size:0.8em;padding:2px 10px;border-radius:12px;font-weight:bold;background:#eee;color:#555;}
+.bonus-capita-tag.positivo{background:#d4edda;color:#155724;}
+.bonus-capita-tag.negativo{background:#f8d7da;color:#721c24;}
+.item-usado-label{display:flex;align-items:center;gap:6px;font-size:0.82em;color:#666;cursor:pointer;margin-top:4px;}
+.item-usado-label.usado{text-decoration:line-through;color:#aaa;}
+.slots-row{display:flex;flex-wrap:wrap;gap:5px;}
+.track-slot{width:28px;height:28px;border-radius:50%;border:2px solid #ccc;background:#f0f0f0;cursor:pointer;transition:all 0.15s;}
+.track-slot:hover{border-color:var(--motim-teal);transform:scale(1.1);}
+.track-slot.motim.filled    {background:var(--motim-red);border-color:var(--motim-red-dark);}
+.track-slot.navegacao.filled{background:var(--motim-teal);border-color:var(--motim-teal-dark);}
+.track-slot.estrago.filled  {background:#7f5900;border-color:#5a3e00;}
+.track-slot.prestigio.filled{background:var(--motim-gold);border-color:#d68910;}
+.recurso-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid #f0f0f0;}
+.recurso-row:last-child{border-bottom:none;}
+.recurso-emoji{font-size:1.2em;width:28px;text-align:center;}
+.recurso-label{flex:1;font-size:0.9em;}
+.recurso-valor{font-size:1.3em;font-weight:bold;color:var(--motim-navy);min-width:30px;text-align:center;}
+.btn-recurso{background:var(--motim-teal);color:white;border:none;border-radius:4px;width:26px;height:26px;cursor:pointer;font-size:1em;font-weight:bold;transition:background 0.2s;display:flex;align-items:center;justify-content:center;}
+.btn-recurso:hover{background:var(--motim-teal-dark);}
+.btn-recurso.menos{background:#999;}
+.btn-recurso.menos:hover{background:#777;}
+.btn-motim{background:var(--motim-red);color:white;border:none;border-radius:var(--radius);padding:7px 14px;font-size:0.88em;font-weight:bold;cursor:pointer;width:100%;transition:background 0.2s;}
+.btn-motim:hover{background:var(--motim-red-dark);}
+.btn-prestigio-bonus{background:var(--motim-gold);color:var(--motim-navy);border:none;border-radius:var(--radius);padding:5px 12px;font-size:0.82em;font-weight:bold;cursor:pointer;width:100%;margin-top:6px;}
+.btn-prestigio-bonus:hover{opacity:0.85;}
+.btn-tirar-carta{background:linear-gradient(135deg,var(--motim-navy),var(--motim-navy-mid));color:var(--motim-white);border:2px solid var(--motim-teal);border-radius:var(--radius);padding:10px 20px;font-size:1em;font-weight:bold;cursor:pointer;width:100%;letter-spacing:0.5px;transition:all 0.2s;font-family:inherit;}
+.btn-tirar-carta:hover{background:var(--motim-teal);color:var(--motim-navy);}
+.jogadores-row{display:flex;align-items:center;gap:8px;background:#f5f5f5;border-radius:4px;padding:6px 10px;}
+.jogadores-row label{font-size:0.82em;color:#555;flex:1;}
+.input-jogadores{width:50px;text-align:center;border:1px solid #ccc;border-radius:4px;padding:3px;font-weight:bold;}
+.jogadores-hint{font-size:0.74em;color:#888;font-style:italic;}
 
 /* =============================================
-   FICHA DO NAVIO
+   APP DE DESAFIO — Carta Sorteada
    ============================================= */
-.motim-header.navio {
-  background: linear-gradient(135deg, #0d1b2a, var(--motim-navy));
-}
+.desafio-app .window-content{background:var(--motim-white);padding:0;}
+.motim-desafio-app{font-family:"Palatino Linotype",Palatino,Georgia,serif;}
 
-/* ---- TRACKS ---- */
-.track-block {
-  margin-bottom: 10px;
-}
+/* Carta sorteada — destaque visual */
+.carta-sorteada{display:flex;align-items:center;gap:16px;padding:16px 20px;}
+.naipe-bg-ouro  {background:linear-gradient(135deg,#c0392b,#e74c3c);color:white;}
+.naipe-bg-paus  {background:linear-gradient(135deg,#1e8449,#27ae60);color:white;}
+.naipe-bg-espada{background:linear-gradient(135deg,#1a2332,#2c3e50);color:white;}
+.naipe-bg-copas {background:linear-gradient(135deg,#922b21,#c0392b);color:white;}
+.cs-card{display:flex;flex-direction:column;align-items:center;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.4);border-radius:8px;padding:10px 16px;min-width:64px;}
+.cs-simbolo{font-size:2em;line-height:1;}
+.cs-valor{font-size:1.6em;font-weight:bold;line-height:1;margin-top:2px;}
+.cs-meta{display:flex;flex-direction:column;gap:4px;}
+.cs-nome{font-size:1.1em;font-weight:bold;}
+.cs-acao{font-size:0.82em;opacity:0.8;}
 
-.track-label {
-  font-size: 0.78em;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--motim-navy);
-  margin-bottom: 5px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+/* Resultado */
+.resultado-passo{padding:0;}
+.resultado-header{display:flex;align-items:center;gap:10px;padding:12px 16px;}
+.resultado-header.tipo-motim  {background:var(--motim-red);color:white;}
+.resultado-header.tipo-especial{background:var(--motim-navy);color:var(--motim-gold);}
+.resultado-header.tipo-normal {background:var(--motim-navy-mid);color:var(--motim-white);}
+.resultado-emoji{font-size:1.8em;flex-shrink:0;}
+.resultado-titulo-bloco{display:flex;flex-direction:column;gap:3px;}
+.resultado-titulo{margin:0;font-size:1.05em;}
+.dif-badge{display:inline-block;font-size:0.72em;padding:2px 8px;border-radius:10px;font-weight:bold;text-transform:uppercase;letter-spacing:0.5px;}
+.dif-facil  {background:#d4edda;color:#155724;}
+.dif-medio  {background:#fff3cd;color:#856404;}
+.dif-dificil{background:#f8d7da;color:#721c24;}
+.dif-especial{background:rgba(255,255,255,0.2);color:inherit;}
+.resultado-desc{margin:0;padding:10px 16px;font-size:0.88em;color:#444;background:#fafafa;border-bottom:1px solid #eee;}
+.resultado-perguntas{padding:8px 16px;background:#f0f8ff;border-bottom:1px solid #dde;font-size:0.82em;color:#336;}
+.resultado-perguntas strong{display:block;margin-bottom:3px;}
+.resultado-perguntas p{margin:0;}
+.resultado-acao-label{padding:6px 16px;font-size:0.84em;color:#555;background:#f9f9f9;border-bottom:1px solid #eee;}
+.outcomes-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#ddd;margin:0;}
+.outcome-cell{background:#fff;padding:8px 10px;}
+.outcome-head{font-size:0.76em;font-weight:bold;margin-bottom:4px;}
+.outcome-item{font-size:0.78em;color:#444;padding:1px 0;}
+.co-vitoria .outcome-head{color:#155724;}
+.co-derrota .outcome-head{color:#721c24;}
+.co-cpos    .outcome-head{color:#856404;}
+.co-cneg    .outcome-head{color:#0c5460;}
+.tesouro-hint{padding:6px 16px;font-size:0.82em;color:#666;background:#fffbf0;border-top:1px solid #eee;}
+.resultado-botoes{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;background:#f5f5f5;border-top:1px solid #ddd;}
+.btn-aplicar{background:var(--motim-teal);color:white;border:none;border-radius:4px;padding:5px 12px;font-size:0.82em;cursor:pointer;font-family:inherit;transition:background 0.2s;}
+.btn-aplicar:hover{background:var(--motim-teal-dark);}
+.btn-postar-chat{background:var(--motim-navy);color:var(--motim-white);border:none;border-radius:4px;padding:5px 12px;font-size:0.82em;cursor:pointer;font-family:inherit;transition:background 0.2s;}
+.btn-postar-chat:hover{background:var(--motim-navy-mid);}
+.btn-sortear-nova{background:var(--motim-gold);color:var(--motim-navy);border:none;border-radius:4px;padding:5px 12px;font-size:0.82em;font-weight:bold;cursor:pointer;font-family:inherit;margin-left:auto;transition:opacity 0.2s;}
+.btn-sortear-nova:hover{opacity:0.85;}
 
-.track-label .track-emoji { font-size: 1.2em; }
+/* Chat */
+.motim-chat-roll{font-family:"Palatino Linotype",Palatino,Georgia,serif;background:var(--motim-white);border:1px solid #ddd;border-radius:var(--radius);overflow:hidden;}
+.chat-header{background:var(--motim-navy);color:var(--motim-white);padding:6px 12px;font-size:0.9em;}
+.chat-pirata{font-weight:bold;}
+.chat-hab{color:var(--motim-teal);font-weight:bold;margin-left:4px;}
+.chat-detalhe{padding:5px 12px;font-size:0.82em;color:#555;border-bottom:1px solid #eee;}
+.chat-capita{margin-top:2px;color:var(--motim-teal-dark);}
+.chat-resultado{padding:8px 12px;display:flex;align-items:center;gap:10px;}
+.chat-total{font-size:1.8em;font-weight:bold;color:var(--motim-navy);min-width:40px;text-align:center;}
+.chat-texto{font-size:0.95em;font-weight:600;}
+.chat-resultado.vitoria        {background:#d4edda;}
+.chat-resultado.vitoria .chat-total{color:#155724;}
+.chat-resultado.derrota        {background:#f8d7da;}
+.chat-resultado.derrota .chat-total{color:#721c24;}
+.chat-resultado.critico-positivo{background:#fff3cd;}
+.chat-resultado.critico-positivo .chat-total{color:#856404;}
+.chat-resultado.critico-negativo{background:#d1ecf1;}
+.chat-resultado.critico-negativo .chat-total{color:#0c5460;}
+.chat-tesouro{padding:4px 12px 8px;font-size:0.82em;color:#888;}
+.motim-chat-desafio{font-family:"Palatino Linotype",Palatino,Georgia,serif;border:1px solid #ddd;border-radius:var(--radius);overflow:hidden;}
+.cd-header{display:flex;align-items:center;gap:8px;padding:8px 12px;}
+.cd-header.tipo-motim  {background:var(--motim-red);color:white;}
+.cd-header.tipo-especial{background:var(--motim-navy);color:var(--motim-gold);}
+.cd-header.tipo-normal {background:var(--motim-navy-mid);color:var(--motim-white);}
+.cd-simbolo{font-size:1.4em;}
+.cd-valor{font-size:1.1em;}
+.cd-titulo{flex:1;font-weight:bold;}
+.cd-dif{font-size:0.75em;padding:2px 8px;border-radius:10px;font-weight:bold;}
+.cd-dif.dif-facil  {background:#d4edda;color:#155724;}
+.cd-dif.dif-medio  {background:#fff3cd;color:#856404;}
+.cd-dif.dif-dificil{background:#f8d7da;color:#721c24;}
+.cd-desc{margin:0;padding:7px 12px;font-size:0.85em;color:#444;background:#fafafa;}
+.cd-acao{margin:0;padding:4px 12px;font-size:0.82em;background:#f5f5f5;color:#555;}
+.cd-tesouro{margin:0;padding:4px 12px;font-size:0.82em;background:#fffbf0;color:#666;}
+.chat-outcomes-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#ddd;}
+.co-cell{background:#fff;padding:6px 10px;}
+.co-head{font-size:0.75em;font-weight:bold;margin-bottom:3px;}
+.co-cell div{font-size:0.77em;color:#444;}
+.co-vitoria .co-head{color:#155724;}
+.co-derrota .co-head{color:#721c24;}
+.co-cpos    .co-head{color:#856404;}
+.co-cneg    .co-head{color:#0c5460;}
+.motim.sheet .window-content::-webkit-scrollbar{width:6px;}
+.motim.sheet .window-content::-webkit-scrollbar-track{background:#f1f1f1;}
+.motim.sheet .window-content::-webkit-scrollbar-thumb{background:var(--motim-teal);border-radius:3px;}
 
-.track-label .track-count {
-  font-size: 0.85em;
-  color: #888;
-  font-weight: normal;
-  text-transform: none;
-  letter-spacing: 0;
-}
-
-.slots-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
-.track-slot {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  background: #f0f0f0;
-  cursor: pointer;
-  transition: all 0.15s;
-  position: relative;
-}
-
-.track-slot.filled {
-  border-color: var(--motim-navy);
-  background: var(--motim-navy);
-}
-
-.track-slot:hover {
-  border-color: var(--motim-teal);
-  transform: scale(1.1);
-}
-
-/* Cores por track */
-.track-slot.motim.filled      { background: var(--motim-red);  border-color: var(--motim-red-dark); }
-.track-slot.navegacao.filled  { background: var(--motim-teal); border-color: var(--motim-teal-dark); }
-.track-slot.estrago.filled    { background: #7f5900;           border-color: #5a3e00; }
-.track-slot.prestigio.filled  { background: var(--motim-gold); border-color: #d68910; }
-
-/* ---- ALERTA ---- */
-.alerta-navio {
-  background: var(--motim-red);
-  color: white;
-  text-align: center;
-  font-size: 0.85em;
-  font-weight: bold;
-  padding: 6px 12px;
-  border-radius: 4px;
-  animation: pulsar 1.5s infinite;
-}
-
-@keyframes pulsar {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.7; }
-}
-
-/* ---- RECURSOS / TESOURO ---- */
-.recurso-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 0;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.recurso-row:last-child { border-bottom: none; }
-
-.recurso-emoji  { font-size: 1.2em; width: 28px; text-align: center; }
-.recurso-label  { flex: 1; font-size: 0.9em; }
-.recurso-valor  { font-size: 1.3em; font-weight: bold; color: var(--motim-navy); min-width: 30px; text-align: center; }
-
-.btn-recurso {
-  background: var(--motim-teal);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  width: 26px;
-  height: 26px;
-  cursor: pointer;
-  font-size: 1em;
-  font-weight: bold;
-  transition: background 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-recurso:hover  { background: var(--motim-teal-dark); }
-.btn-recurso.menos  { background: #999; }
-.btn-recurso.menos:hover { background: #777; }
-
-/* ---- BOTÕES DE AÇÃO DO NAVIO ---- */
-.btn-motim {
-  background: var(--motim-red);
-  color: white;
-  border: none;
-  border-radius: var(--radius);
-  padding: 7px 14px;
-  font-size: 0.88em;
-  font-weight: bold;
-  cursor: pointer;
-  width: 100%;
-  transition: background 0.2s;
-  letter-spacing: 0.5px;
-}
-
-.btn-motim:hover { background: var(--motim-red-dark); }
-
-.btn-prestigio-bônus {
-  background: var(--motim-gold);
-  color: var(--motim-navy);
-  border: none;
-  border-radius: var(--radius);
-  padding: 5px 12px;
-  font-size: 0.82em;
-  font-weight: bold;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 6px;
-  transition: opacity 0.2s;
-}
-
-.btn-prestigio-bônus:hover { opacity: 0.85; }
-
-.btn-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px;
-}
-
-/* ---- JOGADORES ---- */
-.jogadores-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #f5f5f5;
-  border-radius: 4px;
-  padding: 6px 10px;
-}
-
-.jogadores-row label { font-size: 0.82em; color: #555; flex: 1; }
-.input-jogadores {
-  width: 50px;
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 3px;
-  font-weight: bold;
-}
-
-.jogadores-hint { font-size: 0.74em; color: #888; font-style: italic; }
-
-/* =============================================
-   CHAT MESSAGES
-   ============================================= */
-.motim-chat-roll {
-  font-family: "Palatino Linotype", Palatino, Georgia, serif;
-  background: var(--motim-white);
-  border: 1px solid #ddd;
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-.chat-header {
-  background: var(--motim-navy);
-  color: var(--motim-white);
-  padding: 6px 12px;
-  font-size: 0.9em;
-}
-
-.chat-pirata { font-weight: bold; }
-.chat-hab { color: var(--motim-teal); font-weight: bold; margin-left: 4px; }
-
-.chat-detalhe {
-  padding: 5px 12px;
-  font-size: 0.82em;
-  color: #555;
-  border-bottom: 1px solid #eee;
-}
-
-.chat-capita { margin-top: 2px; color: var(--motim-teal-dark); }
-
-.chat-resultado {
-  padding: 8px 12px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.chat-total {
-  font-size: 1.8em;
-  font-weight: bold;
-  color: var(--motim-navy);
-  min-width: 40px;
-  text-align: center;
-}
-
-.chat-texto { font-size: 0.95em; font-weight: 600; }
-
-.chat-resultado.vitoria        { background: #d4edda; }
-.chat-resultado.vitoria .chat-total { color: #155724; }
-.chat-resultado.derrota        { background: #f8d7da; }
-.chat-resultado.derrota .chat-total { color: #721c24; }
-.chat-resultado.critico-positivo { background: #fff3cd; }
-.chat-resultado.critico-positivo .chat-total { color: #856404; }
-.chat-resultado.critico-negativo { background: #d1ecf1; }
-.chat-resultado.critico-negativo .chat-total { color: #0c5460; }
-
-.chat-tesouro {
-  padding: 4px 12px 8px;
-  font-size: 0.82em;
-  color: #888;
-}
-
-/* ---- SCROLLBAR ---- */
-.motim.sheet .window-content::-webkit-scrollbar { width: 6px; }
-.motim.sheet .window-content::-webkit-scrollbar-track { background: #f1f1f1; }
-.motim.sheet .window-content::-webkit-scrollbar-thumb { background: var(--motim-teal); border-radius: 3px; }
+/* v1.3.0 — Breakdown de bônus no chat */
+.chat-breakdown { padding:6px 12px; font-size:0.8em; color:#555; border-bottom:1px solid #eee; display:flex; flex-wrap:wrap; gap:6px; }
+.bl { background:#f0f0f0; border-radius:3px; padding:2px 7px; }
+.bl-capita { background:#e8f8f7; color:var(--motim-teal-dark); }
+.bl-total { background:var(--motim-navy); color:white; font-weight:bold; margin-left:auto; }
