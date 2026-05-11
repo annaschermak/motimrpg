@@ -17,5 +17,5 @@
   "socket": false,
   "url": "https://github.com/annaschermak/motimrpg",
   "manifest": "https://raw.githubusercontent.com/annaschermak/motimrpg/refs/heads/main/system.json",
- "download": "https://github.com/annaschermak/motimrpg/releases/download/v1.3.0/motim.3.zip"
+ "download": "https://github.com/annaschermak/motimrpg/releases/download/v1.3.0/motim.zip"
 }
