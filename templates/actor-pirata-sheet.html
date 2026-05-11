@@ -1,0 +1,78 @@
+<form class="motim sheet pirata {{cssClass}} flexcol" autocomplete="off">
+
+  <div class="motim-header">
+    <img class="actor-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+    <div class="header-info">
+      <h1><input name="name" type="text" value="{{actor.name}}" placeholder="Nome da Pirata" /></h1>
+      <div>
+        <button type="button" class="btn-toggle-capita {{#if system.ehCapita}}ativa{{/if}}">
+          {{#if system.ehCapita}}⚓ No Comando{{else}}🏴‍☠️ Tripulante{{/if}}
+        </button>
+        {{#if system.ehCapita}}
+        <span class="badge-capita">✨ Capitã Ativa</span>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+  <div class="motim-body">
+
+    <div class="secao">
+      <h3 class="secao-titulo">⚓ Identidade</h3>
+      <div class="secao-conteudo">
+        <div class="form-group">
+          <label>Ordem de Capitania</label>
+          <input type="number" name="system.ordemCapitania" value="{{system.ordemCapitania}}" min="0" max="20" style="width:60px;"/>
+        </div>
+        <div class="form-group">
+          <label>Natureza</label>
+          <select name="system.natureza">
+            {{#each naturezas}}
+            <option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Antiga Profissão</label>
+          <select name="system.profissao">
+            {{#each profissoes}}
+            <option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="secao">
+      <h3 class="secao-titulo">👑 Bônus como Capitã</h3>
+      <div class="secao-conteudo">
+        <div style="font-size:0.78em;color:#777;margin-bottom:6px;">
+          Estes bônus se aplicam às rolagens da tripulação enquanto você comanda.
+        </div>
+        {{#if bonusCapita}}
+        <div class="bonus-capita-list">
+          {{#each bonusCapita}}
+          <span class="bonus-capita-tag {{#if positivo}}positivo{{/if}}{{#if negativo}}negativo{{/if}}">
+            {{label}}: {{str}}
+          </span>
+          {{/each}}
+        </div>
+        {{else}}
+        <div style="font-size:0.82em;color:#aaa;font-style:italic;">Nenhum bônus ativo com esta combinação.</div>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="secao">
+      <h3 class="secao-titulo">🎯 Habilidades</h3>
+      <div class="secao-conteudo">
+        <div style="font-size:0.76em;color:#888;margin-bottom:8px;">
+          Distribua: <strong>+2 &nbsp;+1 &nbsp;0 &nbsp;-1 &nbsp;-2</strong> entre as cinco habilidades.
+        </div>
+        <div class="habilidades-grid">
+          {{#each habilidades}}
+          <div class="hab-row">
+            <span class="hab-emoji">{{emoji}}</span>
+            <span class="hab-label">{{label}}</span>
+            <input type="number" name="system.habilidades.{{key}}.value" value="{{value}}" min="-2" max="2" class="hab-value-input"/>
+            <button type="button" class="btn-rolar rolar-habi
