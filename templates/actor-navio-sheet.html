@@ -1,0 +1,135 @@
+<form class="motim sheet navio {{cssClass}} flexcol" autocomplete="off">
+
+  <div class="motim-header navio">
+    <img class="actor-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+    <div class="header-info">
+      <h1><input name="name" type="text" value="{{actor.name}}" placeholder="Nome do Navio" /></h1>
+      <div style="font-size:0.8em;color:rgba(255,255,255,0.6);margin-top:2px;">🏴‍☠️ Ficha do Navio</div>
+    </div>
+  </div>
+
+  <div class="motim-body">
+
+    {{#if motimIminente}}
+    <div class="alerta-navio">💥 MOTIM! Os pontos foram todos marcados — a Capitã muda agora!</div>
+    {{/if}}
+    {{#if navioAfundando}}
+    <div class="alerta-navio">🌊 O NAVIO VAI AFUNDAR! Todos os pontos de estrago foram marcados!</div>
+    {{/if}}
+
+    <div class="secao">
+      <h3 class="secao-titulo">⚙️ Configuração da Sessão</h3>
+      <div class="secao-conteudo">
+        <div class="jogadores-row">
+          <label>Número de Jogadoras</label>
+          <input type="number" class="input-jogadores" value="{{system.numJogadores}}" min="1" max="10" />
+          <span class="jogadores-hint">Define os espaços de Motim e Prestígio</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="secao">
+      <h3 class="secao-titulo">💥 Motim <span class="track-count">({{system.motim.value}}/{{system.motim.max}})</span></h3>
+      <div class="secao-conteudo">
+        <div style="font-size:0.76em;color:#888;margin-bottom:8px;">
+          Marcado a cada falha em desafio. Quando cheio → MOTIM, nova Capitã assume!
+        </div>
+        <div class="slots-row">
+          {{#each motimSlots}}
+          <div class="track-slot motim {{#if filled}}filled{{/if}}" data-track="motim" data-idx="{{idx}}"></div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <div class="secao">
+      <h3 class="secao-titulo">⭐ Prestígio <span class="track-count">({{system.prestigio.value}}/{{system.prestigio.max}})</span></h3>
+      <div class="secao-conteudo">
+        <div style="font-size:0.76em;color:#888;margin-bottom:8px;">
+          Conquistado em vitórias notáveis. Quando cheio → +1 espaço de Motim!
+        </div>
+        <div class="slots-row">
+          {{#each prestigioSlots}}
+          <div class="track-slot prestigio {{#if filled}}filled{{/if}}" data-track="prestigio" data-idx="{{idx}}"></div>
+          {{/each}}
+        </div>
+        <button type="button" class="btn-prestigio-bônus" style="margin-top:8px;">
+          ⭐ Prestígio Completo → +1 slot de Motim
+        </button>
+      </div>
+    </div>
+
+    <div class="secao">
+      <h3 class="secao-titulo">🔩 Estrago <span class="track-count">({{system.estrago.value}}/{{system.estrago.max}})</span></h3>
+      <div class="secao-conteudo">
+        <div style="font-size:0.76em;color:#888;margin-bottom:8px;">
+          Sempre 7 espaços. Repare com Consertar quando saírem cartas de Copas ♥.
+        </div>
+        <div class="slots-row">
+          {{#each estragoSlots}}
+          <div class="track-slot estrago {{#if filled}}filled{{/if}}" data-track="estrago" data-idx="{{idx}}"></div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <div class="secao">
+      <h3 class="secao-titulo">🧭 Navegação <span class="track-count">({{system.navegacao.value}}/{{system.navegacao.max}})</span></h3>
+      <div class="secao-conteudo">
+        <div style="font-size:0.76em;color:#888;margin-bottom:8px;">
+          4 espaços. Usados para fugir de Espadas ♠. Gastos na rolagem, ganhos em vitórias.
+        </div>
+        <div class="slots-row">
+          {{#each navegacaoSlots}}
+          <div class="track-slot navegacao {{#if filled}}filled{{/if}}" data-track="navegacao" data-idx="{{idx}}"></div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <div class="secao">
+      <h3 class="secao-titulo">💰 Recursos e Tesouro</h3>
+      <div class="secao-conteudo">
+        <div class="recurso-row">
+          <span class="recurso-emoji">🪵</span>
+          <span class="recurso-label">Recursos</span>
+          <button type="button" class="btn-recurso menos" data-track="recursos" data-delta="-1">−</button>
+          <span class="recurso-valor">{{system.recursos.value}}</span>
+          <button type="button" class="btn-recurso" data-track="recursos" data-delta="1">+</button>
+        </div>
+        <div class="recurso-row">
+          <span class="recurso-emoji">💎</span>
+          <span class="recurso-label">Tesouro</span>
+          <button type="button" class="btn-recurso menos" data-track="tesouro" data-delta="-1">−</button>
+          <span class="recurso-valor">{{system.tesouro.value}}</span>
+          <button type="button" class="btn-recurso" data-track="tesouro" data-delta="1">+</button>
+        </div>
+        <div style="font-size:0.76em;color:#888;margin-top:6px;">1 Tesouro = 1 Recurso.</div>
+      </div>
+    </div>
+
+    <div class="secao">
+      <h3 class="secao-titulo">🏴‍☠️ Ações de Capitania</h3>
+      <div class="secao-conteudo">
+        <button type="button" class="btn-motim">
+          💥 Declarar Motim — Zerar pontos e passar o comando
+        </button>
+      </div>
+    </div>
+
+    <div class="secao">
+      <h3 class="secao-titulo">📖 Naipes dos Desafios</h3>
+      <div class="secao-conteudo" style="font-size:0.82em;line-height:1.9;color:#444;">
+        ♦ <strong>Ouro</strong> → Rota Comercial — Negociar<br>
+        ♣ <strong>Paus</strong> → Clima — Navegar<br>
+        ♠ <strong>Espada</strong> → Outro Navio — Lutar ou Navegar<br>
+        ♥ <strong>Copas</strong> → Reparo — Consertar ou Acalmar Tripulação<br><br>
+        <strong>2-4:</strong> Fácil &nbsp;|&nbsp;
+        <strong>5-7:</strong> Médio &nbsp;|&nbsp;
+        <strong>8-10:</strong> Difícil &nbsp;|&nbsp;
+        <strong>Ás:</strong> + Motim!
+      </div>
+    </div>
+
+  </div>
+</form>
