@@ -1,0 +1,39 @@
+{
+  "Actor": {
+    "types": ["pirata", "navio"],
+    "templates": {},
+    "pirata": {
+      "itemPreferido": "",
+      "itemUsado": false,
+      "natureza": "loba_do_mar",
+      "profissao": "soldada",
+      "ehCapita": false,
+      "ordemCapitania": 0,
+      "habilidades": {
+        "lutar": { "value": 0 },
+        "negociar": { "value": 0 },
+        "navegar": { "value": 0 },
+        "consertar": { "value": 0 },
+        "acalmarTripulacao": { "value": 0 }
+      }
+    },
+    "navio": {
+      "nomeEmbarcacao": "",
+      "numJogadores": 4,
+      "motim": { "value": 0, "max": 4 },
+      "navegacao": { "value": 0, "max": 4 },
+      "estrago": { "value": 0, "max": 7 },
+      "recursos": { "value": 0 },
+      "tesouro": { "value": 0 },
+      "prestigio": { "value": 0, "max": 4 }
+    }
+  },
+  "Item": {
+    "types": ["item"],
+    "templates": {},
+    "item": {
+      "descricao": "",
+      "usado": false
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "motim",
+  "title": "Motim",
+  "description": "Jogo narrativo cooperativo de piratas coelhos em alto mar. Por Anna Schermak e Marina Sampaio, publicado pela Secular Games.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "12"
+  },
+  "authors": [
+    { "name": "Anna Schermak" },
+    { "name": "Marina Sampaio" }
+  ],
+  "esmodules": ["motim.js"],
+  "styles": ["motim.css"],
+  "template": "template.json",
+  "socket": false,
+  "initiative": "1d6",
+  "gridDistance": 1,
+  "gridUnits": "u",
+  "primaryTokenAttribute": null,
+  "secondaryTokenAttribute": null,
+  "background": "",
+  "url": "https://seculargames.com.br",
+  "manifest": "",
+  "download": ""
+}
